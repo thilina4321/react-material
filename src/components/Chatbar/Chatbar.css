@@ -1,0 +1,30 @@
+.chatbar{
+    display: flex;
+    flex-direction: column;
+    flex: 0.75;
+    color: white;
+    background-color: rgb(15, 15, 44);
+    padding-left: 10px;
+
+}
+
+.chatbar__messages{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.chatbar__input{
+    width: 80%;
+    
+}
+
+.chatbar__input > input, .chatbar__input > form > input{
+    width: 100%;
+    background-color: rgb(28, 28, 97);
+    color: white;
+    outline: none;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+}

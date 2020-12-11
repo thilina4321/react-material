@@ -1,0 +1,20 @@
+.sidebar_ch_names_name{
+    cursor: pointer;
+}
+
+.sidebar_ch_names_name:hover{
+    color: grey;
+
+}
+.sidebar_ch_names_name:active{
+    color: grey;
+
+}
+
+.ch_name:focus{
+    color: greenyellow;
+}
+
+.ch_name:active{
+    color: greenyellow;
+}
