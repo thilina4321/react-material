@@ -38,6 +38,8 @@ const dispatch = useDispatch()
     })
   }, [dispatch])
 
+  const dummy = ()=>{}
+
 
     return (
       <Fragment>
@@ -48,7 +50,7 @@ const dispatch = useDispatch()
         
 
           <Hidden only={['xs']}>
-            <Sidebar />
+            <Sidebar clickChannel={dummy}/>
           </Hidden>
           <Chatbar/>
         </div>

@@ -17,7 +17,6 @@ const Sidebar = (props)=> {
        db.collection('channels').onSnapshot(snapShot=>{
             if(snapShot.docs.length > 0){
                 const channels = snapShot.docs.map(doc=>{
-                    console.log(doc.data().channelName);
                     return {
                         id:doc.id,
                         name:doc.data().channelName,
@@ -56,10 +55,11 @@ const Sidebar = (props)=> {
                 
                 {channels.map(ch=>{
                     return <SidebarChannels
+
                     clickChannel={props.clickChannel}
                     name={ch.name}
                     id={ch.id}
-                     key={ch.id}/>
+                    key={ch.id}/>
 
                 })}
             </div>
