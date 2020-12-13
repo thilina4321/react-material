@@ -7,7 +7,7 @@ import SidebarChannels from './SidebarChannels/SidebarChannels';
 import { useDispatch, useSelector } from 'react-redux';
 import db from '../../firebase/Firebase'
 
-const Sidebar = ()=> {
+const Sidebar = (props)=> {
     const user = useSelector(state => state.user.user)
     const channels = useSelector(state => state.channels.channels)
     const dispatch = useDispatch()
@@ -56,6 +56,7 @@ const Sidebar = ()=> {
                 
                 {channels.map(ch=>{
                     return <SidebarChannels
+                    clickChannel={props.clickChannel}
                     name={ch.name}
                     id={ch.id}
                      key={ch.id}/>

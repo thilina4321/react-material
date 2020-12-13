@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Chatbar.css'
 import Messages from './Messages/Messages'
 
@@ -7,7 +7,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import db from '../../firebase/Firebase'
 import * as actionType from '../../store/actionType'
 
+
+import Hidden from '@material-ui/core/Hidden';
+import Button from '@material-ui/core/Button';
+import Drawer from '@material-ui/core/Drawer';
+import Menu from '@material-ui/icons/Menu';
+import Sidebar from '../SideBar/Sidebar';
+
 const Chatbar = () =>{
+
+    const [open, setOpen] = useState(false);
+  const toggleDrawer = (value) =>{
+    setOpen(value)
+  }
 
 
     const user = useSelector(state => state.user.user)
@@ -52,11 +64,22 @@ const Chatbar = () =>{
     return (
         <div className="chatbar">
 
+        <div className="chatbar__drawer">
+        <Hidden only={['lg', 'md', 'sm']}>
+        <Button color="inherit" onClick={()=>toggleDrawer(true)}> <Menu/> </Button>
+          <Drawer 
+          anchor="left" open={open} onClose={()=>toggleDrawer(false)}>
+            <Sidebar clickChannel={()=>toggleDrawer(false)}/>
+          </Drawer>
+        </Hidden>
+        </div>
+        
+
                 <div className="chatbar__channel">
-                <h2>  { channelName} </h2>  
+                { channelName && <h2> # { channelName} </h2>  }
             </div>
 
-            <Divider />
+            <Divider/>
             <div className="chatbar__messages">
             {messages.map(msg=>{
                 return <Messages key={msg.id}

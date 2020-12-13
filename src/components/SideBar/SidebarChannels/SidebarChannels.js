@@ -8,6 +8,7 @@ const SidebarChannels = (props)=> {
     const dispatch = useDispatch()
 
     const onAddChaneel = (chId, name)=>{
+        props.clickChannel()
         dispatch({
             type:actionType.CHANNELID,
             channelId:chId,
@@ -17,7 +18,7 @@ const SidebarChannels = (props)=> {
     return (
         <div onClick={()=>onAddChaneel(props.id, props.name)}
         className="sidebar_ch_names_name">
-            <h4 className="ch_name"> # {props.name} </h4>
+            <h3 className="ch_name"> # {props.name} </h3>
         </div>
     )
 }

@@ -1,11 +1,17 @@
 .chatbar{
     display: flex;
     flex-direction: column;
-    flex: 0.75;
+    flex: 1;
     color: white;
-    background-color: rgb(15, 15, 44);
+    background-color: rgb(20, 20, 51);
     padding-left: 10px;
+    height: 100vh;
 
+}
+
+.chatbar__drawer{
+    margin: 0;
+    align-self: flex-start;
 }
 
 .chatbar__messages{
@@ -16,7 +22,7 @@
 
 .chatbar__input{
     width: 80%;
-    
+    margin-bottom: 20px;
 }
 
 .chatbar__input > input, .chatbar__input > form > input{
